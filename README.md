@@ -1,7 +1,7 @@
 # PLS vs PCR for Return Prediction
 
 ## Overview
-This project studies the use of dimensionality reduction techniques for cross-sectional stock return prediction.In particular, comparing Principal Component Regression (PCR) under multiple selection criteria (AIC, 2-fold CV, and Onatski) with Partial Least Squares (PLS).
+This project studies the use of dimensionality reduction techniques for cross-sectional stock return prediction.In particular, comparing Principal Component Regression (PCR) under multiple selection criteria (2-fold CV, AIC, and Onatski) with Partial Least Squares (PLS).
 
 ## Data
 - Taiwan stock data (daily)  
@@ -27,11 +27,10 @@ The predictors are constructed from daily data and grouped into several economic
 - Firm characteristics
   - Size (log market capitalization)
 
-All predictors are cross-sectionally standardized within each month.
+All predictors are cross-sectionally standardized within each month.  
+Target variable is the next-month return.
 
-The target variable is the next-month return.
-
-## $S_{train}$ and $S_{test}$
+## $S_{train}$  $S_{test}$
 **Expanding Window:**
 - At each time ( t ):
   - Train on all data up to ( t )
@@ -66,7 +65,7 @@ The implementation follows an iterative backward search from $K_{max}$ to 1
 
 ## Evaluation Metric
 
-Out-of-sample performance is measured using:
+Out-of-sample performance is measured using:  
 $$
 \begin{aligned}
 RMSE_{test} = (\frac{1}{N} \sum (y_i - \hat{f}_{train}(x_{i}))^2)^{1/2}
