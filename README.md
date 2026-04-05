@@ -66,11 +66,9 @@ The implementation follows an iterative backward search from $K_{max}$ to 1
 ## Evaluation Metric
 
 Out-of-sample performance is measured using:  
-$$
-\begin{aligned}
-RMSE_{test} = (\frac{1}{N} \sum (y_i - \hat{f}_{train}(x_{i}))^2)^{1/2}
-\end{aligned}
-$$
+
+$RMSE_{test} = (\frac{1}{N} \sum (y_i - \hat{f}_{train}(x_{i}))^2)^{1/2}$
+
 
 ## Results
 
