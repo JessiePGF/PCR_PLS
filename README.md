@@ -55,8 +55,8 @@ The number of components ( k ) is selected using:
 - Akaike Information Criterion (AIC)  
   - While AIC is formally defined by degrees of freedom, $k$ (the number of components) acts as a close proxy in PCR
 - Onatski criterion  
-The implementation follows an iterative backward search from $K_{max}$ to 1
-  - For each candidate $k$, perform a regression on eigenvalues from $k+1$ to $K_{max}$ to estimate the average noise decay
+The implementation follows an iterative backward search from $k_{max}$ to 1
+  - For each candidate $k$, perform a regression on eigenvalues from $k+1$ to $k_{max}$ to estimate the average noise decay
   - Identify the largest $k$ that satisfies the condition: $Current Drop \ge 2 \times Average Noise Decay$
 
 **2. Partial Least Squares (PLS)**  
@@ -83,9 +83,14 @@ $$
 ![summary_result](Result/summary_table.png)
 
 ### Selected Number of Components ($k$) Over Time
+- AIC tends to select larger models
+- CV and Onatski are more conservative
+
 ![components_result](Result/k_ts.png)
 
 ### Cumulative Squared Prediction Error
+- Cumulative squared prediction errors of all models evolve almost identically over time
+
 ![cum_result](Result/cum_rmse.png)
 
 ### Top Loadings / Weights Comparison
